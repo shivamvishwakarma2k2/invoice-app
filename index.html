@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    
+    <div class="container invoice-box">
+        <!-- 
+        <div class="invoice-header">
+            <h4>Invoice App</h4>
+            <h2>SHIVAM FURNITURE</h2>
+            <p>Specialists: Furniture, Aluminum Sliding, Painting, POP, Polish & All kinds of Civil Work</p>
+            <p>Mobile: 9867924687</p>
+        </div> 
+        -->
+
+        <div class="d-flex justify-content-end date-container">
+            <div>Date: <span id="currentDate"></span></div>
+        </div>
+
+        <div class="table-container">
+            <table class="table table-bordered invoice-table" id="invoiceTable">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Particulars</th>
+                        <th>Quantity</th>
+                        <th>Rate (₹)</th>
+                        <th>Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added here -->
+                </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <td colspan="4">Grand Total</td>
+                        <td id="grandTotal">₹0.00</td>
+                    </tr>
+                    <tr class="deduction-row">
+                        <td colspan="4">Deduction</td>
+                        <td>
+                            <input type="number" class="form-control form-control-sm deduction-input" id="deduction" value="0.00" step="0.01" min="0" />
+                        </td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="4">Net Total</td>
+                        <td id="netTotal">₹0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="footer-btns">
+            <button class="btn btn-primary" onclick="addNewRow()">Add Row</button>
+            <button class="btn btn-success" onclick="generatePDF()">Download PDF</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+
+</html>
